@@ -8,11 +8,14 @@
 // @license        http://opensource.org/licenses/MIT
 // ==/UserScript==
 
-setTimeout(function() {
+function main() {
 	var div = document.createElement('div'),
 		select = document.createElement('select'),
 		insertBefore = document.getElementById('files');
 		
+	if (!insertBefore || document.getElementById('tab-size-changer')) { return; }
+	
+	select.id = 'tab-size-changer';
 	for (var i = 0; i < 8; i++) {
 		select.innerHTML += '<option>' + i + '</option>';
 	}
@@ -30,6 +33,9 @@ setTimeout(function() {
 	div.innerHTML = '<label>Select Tab Size: ';
 	div.appendChild(select);
 
-	insertBefore.parentNode.insertBefore(div, insertBefore)
-}, 1000);
+	insertBefore.parentNode.insertBefore(div, insertBefore);
+}
+	
+main();
+setInterval(main, 1000);
 
