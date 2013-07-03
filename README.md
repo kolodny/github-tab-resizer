@@ -1,7 +1,7 @@
 github-tab-resizer
 ==================
 
-Open extensions and drag `github-tab-resizer.user.js` in
+In Chrome open extensions and drag in `github-tab-resizer.user.js`
 
 Let's you change the tab size when viewing the source on github.com
 
