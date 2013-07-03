@@ -19,7 +19,7 @@ function main() {
 	for (var i = 0; i < 8; i++) {
 		select.innerHTML += '<option>' + i + '</option>';
 	}
-	select.innerHTML += '<option selected>8</option>';
+	select.innerHTML += '<option>8</option>';
 
 	select.onchange = function() {
 		var selectedSize = this.options[this.options.selectedIndex].value,
@@ -29,6 +29,8 @@ function main() {
 		filesDiv.style['-o-tab-size'] = selectedSize;
 		filesDiv.style['tab-size'] = selectedSize;
 	};
+	select.options[4].selected = true // default tabs size to 4
+	select.onchange() // and fire the handler
 
 	div.innerHTML = '<label>Select Tab Size: ';
 	div.appendChild(select);
